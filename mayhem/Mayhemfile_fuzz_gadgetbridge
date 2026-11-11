@@ -1,0 +1,10 @@
+project: savantenvs/ZSWatch
+target: fuzz_gadgetbridge
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_gadgetbridge/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_gadgetbridge
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/fuzz_gadgetbridge/fuzz_gadgetbridge.dict
+    timeout: 10
